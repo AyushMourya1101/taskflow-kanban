@@ -16,18 +16,19 @@ function TaskCard({ task, onDelete }) {
     <div
       ref={setNodeRef}
       style={style}
-      className="bg-gray-200 p-3 rounded shadow flex items-start justify-between gap-2 w-full max-w-full"
+      className="bg-white border border-gray-200 p-4 rounded-lg shadow hover:shadow-lg transition-all duration-200 ease-in-out flex items-start justify-between gap-2 w-full max-w-full"
     >
-      
-      <div {...listeners} {...attributes} className="w-full break-all text-sm cursor-move">
+      <div
+        {...listeners}
+        {...attributes}
+        className="w-full break-all text-sm cursor-move"
+      >
         {task.title}
       </div>
-
-      
       <button
         className="text-red-600 shrink-0 ml-2"
         onClick={(e) => {
-          e.stopPropagation(); // ✅ Prevent drag interference
+          e.stopPropagation();
           onDelete(task.id);
         }}
       >
